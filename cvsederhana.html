@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Judul Halaman Web -->
+    <title>Personal Web Sederhana</title>
+   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23333' d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/></svg>">
+    <!-- CSS Internal untuk styling halaman -->
+     <link rel="stylesheet" href="cv.css">
+</head>
+<body>
+
+    <!-- Ini adalah container utama dari halaman web -->
+    <div class="container">
+        <!-- 1. HTML Picture: Ganti src dengan link foto Anda -->
+        <img src="c:\Users\Asus\Pictures\Screenshots\Screenshot 2025-06-10 125422.png" class="profile-picture">
+
+        <!-- 4. HTML Heading: Ganti dengan nama Anda -->
+        <h1> Muhammad Daffa Fachrurozi</h1>
+
+        <!-- Paragraf untuk detail tambahan -->
+        <p class="details">
+            NIM: 102022400151 / Fakultas Rekayasa Industri / Program Studi Sistem informasi
+        </p>
+
+        <!-- 3. HTML Link: Link media sosial -->
+        <div class="social-links">
+            <!-- Ganti href="#" dengan link sosial media Anda. target="_blank" membuka di tab baru -->
+            <a href="#" target="_blank" title="X/Twitter">X</a>
+            <a href="https://github.com/Daffa-22" target="_blank" title="GitHub">G</a>
+            <a href="https://www.instagram.com/dafachzi_?igsh=MTM0dTJkdjhpN3ZwcA%3D%3D&utm_source=qr" target="_blank" title="Instagram">IG</a>
+            <a href="https://www.linkedin.com/in/muhammad-daffa-f-744b7533a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" title="LinkedIn">L</a>
+        </div>
+
+        <!-- 9. HTML Date and Time: Akan diisi oleh JavaScript -->
+        <div id="datetime" class="datetime">Memuat waktu...</div>
+        
+        <!-- 10. HTML Table: Contoh tabel sederhana -->
+        <h2>Jadwal Mata Kuliah Semester 3</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Hari</th>
+                    <th>Mata Kuliah</th>
+                    <th>Waktu</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Senin</td>
+                    <td>Pemrograman Web</td>
+                    <td>08:00 - 10:00</td>
+                </tr>
+                <tr>
+                    <td>Selasa</td>
+                    <td>Pemodelan Proses bisnis</td>
+                    <td>10:00 - 12:00</td>
+                </tr>
+                 <tr>
+                    <td>Rabu</td>
+                    <td>analisis perancangan</td>
+                    <td>13:00 - 15:00</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- JavaScript untuk menampilkan tanggal dan waktu secara dinamis -->
+    <script>
+        function updateTime() {
+            // Dapatkan elemen untuk menampilkan waktu
+            const datetimeElement = document.getElementById('datetime');
+            
+            // Buat objek tanggal baru
+            const now = new Date();
+            
+            // Format tanggal dan waktu ke dalam format bahasa Indonesia
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            };
+            const formattedDateTime = now.toLocaleDateString('id-ID', options);
+            
+            // Tampilkan di halaman web
+            datetimeElement.textContent = formattedDateTime.replace('pukul', '');
+        }
+
+        // Panggil fungsi pertama kali saat halaman dimuat
+        updateTime();
+        
+        // Atur agar fungsi dipanggil setiap detik (1000 milidetik)
+        setInterval(updateTime, 1000);
+    </script>
+
+</body>
+</html>
